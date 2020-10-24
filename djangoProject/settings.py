@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cadastros',
     'cadastros.usuarios',
+    'cadastros.pacientes',
+    'cadastros.profissional',
+    'consultas.avaliacao',
+    'consultas.anamnese',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +83,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'SFIESGF.db',
     }
 }
 

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from cadastros.usuarios.models import Usuarios
+#from cadastros.usuarios.models import Usuarios
 
-admin.site.register(Usuarios)
+##admin.site.register(Usuarios)

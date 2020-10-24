@@ -1,6 +1,35 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+
+class Permissoes(models.Model):
+    id = models.AutoField(primary_key=True)
+    descricao = models.CharField(max_length=40)
+
+    admnistrador = models.IntegerField(default=0)
+    administrador_super = models.IntegerField(default=0)
+
+    cadastra_usuario = models.IntegerField(default=0)
+    edita_usuario = models.IntegerField(default=0)
+    acessa_cadastro_usuario = models.IntegerField(default=0)
+    muda_status_usuario = models.IntegerField(default=0)
+
+    cadastra_paciente = models.IntegerField(default=0)
+    edita_paciente = models.IntegerField(default=0)
+    acessa_cadastro_paciente = models.IntegerField(default=0)
+    muda_status_paciente = models.IntegerField(default=0)
+
+    cadastra_profissional = models.IntegerField(default=0)
+    edita_profissional = models.IntegerField(default=0)
+    acessa_cadastro_profissional = models.IntegerField(default=0)
+    muda_status_profisisonal = models.IntegerField(default=0)
+
+    observacoes = models.TextField(max_length=200, blank=True)
+    status = models.CharField(max_length=10, default='ATIVO')
+
+    data_registro = models.DateTimeField(auto_now_add=True)
+    data_alteracao = models.DateTimeField(auto_now=True)
+
 class Usuarios(models.Model):
     id_usuarios = models.AutoField(primary_key=True)
     usuario = models.OneToOneField(User, blank=True, null=True, on_delete=models.DO_NOTHING,)
@@ -11,6 +40,7 @@ class Usuarios(models.Model):
         ('INATIVO', 'INATIVO'),
         ('EXCLUIDO', 'EXCLUIDO'),
     ))
+    permissoes = models.ForeignKey(Permissoes, on_delete=models.DO_NOTHING)
     model_template = models.CharField(max_length=100, blank=True, null=True)
     data_registro = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     data_alteracao = models.DateTimeField(auto_now=True, blank=True, null=True)
