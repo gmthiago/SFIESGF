@@ -1,3 +1,4 @@
 from django.contrib import admin
+from cadastros.profissional.models import Profissional
 
-# Register your models here.
+admin.site.register(Profissional)

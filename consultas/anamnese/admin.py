@@ -1,3 +1,4 @@
 from django.contrib import admin
+from consultas.anamnese.models import Anamnese
 
-# Register your models here.
+admin.site.register(Anamnese)

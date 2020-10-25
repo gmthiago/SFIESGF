@@ -5,10 +5,21 @@ class Pacientes(models.Model):
     id_paciente = models.AutoField(primary_key=True)
     nome_paciente = models.CharField(max_length=100, blank=False, null=True)
     telefone_paciente = models.CharField(max_length=100, blank=False, null=True)
-    profissional = models.ForeignKey(Profissional, on_delete=models.DO_NOTHING)
+    profissional = models.ForeignKey(Profissional, null=True, on_delete=models.DO_NOTHING)
+    estado_civil = models.CharField(max_length=15, blank=False, null=False, choices=(
+        ('SOLTEIRO', 'SOLTEIRO'),
+        ('CASADO', 'CASADO'),
+        ('UNIAO ESTAVEL', 'UNIAO ESTAVEL'),
+        ('DIVORCIADO', 'DIVORCIADO'),
+        ('SEPARADO', 'SEPARADO'),
+        ('OUTROS', 'OUTROS'),
+    ))
     naturalidade = models.CharField(max_length=100, blank=False, null=True)
-    estado_civil = models.CharField(max_length=100, blank=False, null=True)
-    genero = models.CharField(max_length=100, blank=False, null=True)
+    genero = models.CharField(max_length=15, blank=False, null=False, choices=(
+        ('MASCULINO', 'MASCULINO'),
+        ('FEMININO', 'FEMININO'),
+        ('OUTROS', 'OUTROS'),
+    ))
     local_nascimento = models.CharField(max_length=100, blank=False, null=True)
     data_nascimento = models.DateField(blank=True, null=True)
     profissao = models.CharField(max_length=100, blank=False, null=True)
