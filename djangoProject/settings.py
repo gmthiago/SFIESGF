@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cadastros.profissional',
     'consultas.avaliacao',
     'consultas.anamnese',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
