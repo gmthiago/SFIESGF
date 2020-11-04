@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import FormularioPaciente
 from cadastros.pacientes.models import Pacientes
+from cadastros.usuarios.models import Usuarios
+
 
 def TelaPaciente(request):
     pacientes = Pacientes.objects.all()
