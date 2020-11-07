@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cadastros.profissional',
     'consultas.avaliacao',
     'consultas.anamnese',
+    'agendamento',
     'crispy_forms',
 ]
 
