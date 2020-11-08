@@ -21,6 +21,7 @@ from django.conf.urls import url
 urlpatterns = [
     url('', include('cadastros.urls')),
     url('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     url('', TemplateView.as_view(template_name='index.html')),
     ]
 
