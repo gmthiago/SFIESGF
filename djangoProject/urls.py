@@ -22,6 +22,7 @@ urlpatterns = [
     url('', include('cadastros.urls')),
     url('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    ##url(r'^$', 'agendamento.views.Agendamento', name='agenda'),
     url('', TemplateView.as_view(template_name='index.html')),
     ]
 
