@@ -10,23 +10,25 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('profissional', '0001_initial'),
+        ('pacientes', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Avaliacao',
+            name='Agenda',
             fields=[
-                ('id_avaliacao_aluno', models.AutoField(primary_key=True, serialize=False)),
-                ('nome_aluno', models.CharField(max_length=100, null=True)),
-                ('avaliacao', models.CharField(max_length=1000, null=True)),
+                ('id_agendamento_paciente', models.AutoField(primary_key=True, serialize=False)),
+                ('telefone', models.CharField(max_length=100, null=True)),
                 ('email', models.EmailField(max_length=30, unique=True)),
-                ('status', models.CharField(choices=[('ATIVO', 'ATIVO'), ('INATIVO', 'INATIVO'), ('EXCLUIDO', 'EXCLUIDO')], default='ATIVO', max_length=10, null=True, verbose_name='Status')),
+                ('principal_queixa', models.CharField(max_length=1000, null=True)),
+                ('data_agendamento', models.DateTimeField(blank=True, null=True)),
                 ('data_registro', models.DateTimeField(auto_now_add=True, null=True)),
                 ('data_alteracao', models.DateTimeField(auto_now=True, null=True)),
+                ('paciente', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='pacientes.pacientes')),
                 ('profissional', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='profissional.profissional')),
             ],
             options={
-                'db_table': 'avaliacao',
+                'db_table': 'agendap',
             },
         ),
     ]
