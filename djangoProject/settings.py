@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'consultas.anamnese',
     'agendamento',
     'consultas.agenda',
-    ##'crispy_forms',
+    'cadastros.supervisor',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +88,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'SFIESGF7.db',
+        'NAME': BASE_DIR / 'SFIESGF10.db',
     }
 }
 

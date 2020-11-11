@@ -7,6 +7,7 @@ class Agenda(models.Model):
     telefone = models.CharField(max_length=100, blank=False, null=True)
     email = models.EmailField(max_length=30, blank=False, unique=True)
     queixa = models.CharField(max_length=1000, blank=False, null=True)
+    pedido_medico = models.FileField(upload_to='', default='', verbose_name='Pedido Médico')
     data_registro = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     data_alteracao = models.DateTimeField(auto_now=True, blank=True, null=True)
 

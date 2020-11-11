@@ -1,11 +1,10 @@
 from django.db import models
-from cadastros.profissional.models import Profissional
+
 
 class Pacientes(models.Model):
     id_paciente = models.AutoField(primary_key=True)
     nome_paciente = models.CharField(max_length=100, blank=False, null=True)
     telefone_paciente = models.CharField(max_length=100, blank=False, null=True)
-    profissional = models.ForeignKey(Profissional, null=True, on_delete=models.DO_NOTHING)
     estado_civil = models.CharField(max_length=15, blank=False, null=False, choices=(
         ('SOLTEIRO', 'SOLTEIRO'),
         ('CASADO', 'CASADO'),
