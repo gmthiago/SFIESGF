@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'agendamento',
     'consultas.agenda',
     'cadastros.supervisor',
-    'crispy_forms',
+    ##'crispy_forms',
 ]
 
 MIDDLEWARE = [
