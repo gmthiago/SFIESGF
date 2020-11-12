@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'djangoProject.wsgi.application'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/logado/initial_page.html'
+LOGIN_REDIRECT_URL = ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -88,7 +88,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'SFIESGF10.db',
+        'NAME': BASE_DIR / 'SFIESGF11.db',
     }
 }
 

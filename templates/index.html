@@ -1,8 +1,11 @@
-{% load static %}
+
+
 
 
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
+
 
 <head>
 
@@ -43,7 +46,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="agenda.html">
+        <a class="nav-link" href="{% url 'agendamento' %}">
           <span>Agenda</span></a>
       </li>
 
@@ -72,7 +75,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-            <img src="images/index.jpg" alt="fisioterapia" />
+            <img src="{% static 'images/index.png' %}" alt="fisioterapia" />
 
 
         </div>
