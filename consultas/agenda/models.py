@@ -1,6 +1,6 @@
 from django.db import models
 from cadastros.pacientes.models import Pacientes
-from cadastros.profissional.models import Profissional
+from cadastros.profissional.models import Professor
 
 
 class Agenda(models.Model):
@@ -10,6 +10,7 @@ class Agenda(models.Model):
     email = models.EmailField(max_length=30, blank=False, unique=True)
     principal_queixa = models.CharField(max_length=1000, blank=False, null=True)
     CID = models.CharField(max_length=1000, blank=False, null=True)
+    diag_clinico = models.CharField(max_length=1000, blank=False, null=True, verbose_name='Diagnóstico Clínico')
     pedido_medico = models.FileField(upload_to='', default='', verbose_name='Pedido Médico')
     data_agendamento = models.DateTimeField(blank=True, null=True)
     data_registro = models.DateTimeField(auto_now_add=True, blank=True, null=True)

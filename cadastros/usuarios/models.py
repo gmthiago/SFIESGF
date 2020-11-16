@@ -32,7 +32,7 @@ class Permissoes(models.Model):
 
 class Usuarios(models.Model):
     id_usuarios = models.AutoField(primary_key=True)
-    usuario = models.OneToOneField(User, blank=True, null=True, on_delete=models.DO_NOTHING,)
+    usuario = models.OneToOneField(User, blank=True, null=False, on_delete=models.DO_NOTHING,)
     nome = models.CharField(max_length=100, blank=False, null=True)
     email = models.EmailField(max_length=30, blank=False, unique=True)
     status = models.CharField('Status', max_length=10, default='ATIVO', blank=False, null=True, choices=(
@@ -40,7 +40,7 @@ class Usuarios(models.Model):
         ('INATIVO', 'INATIVO'),
         ('EXCLUIDO', 'EXCLUIDO'),
     ))
-    permissoes = models.ForeignKey(Permissoes, on_delete=models.DO_NOTHING)
+    permissoes = models.ForeignKey(Permissoes, blank=True, null=False, on_delete=models.DO_NOTHING)
     model_template = models.CharField(max_length=100, blank=True, null=True)
     data_registro = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     data_alteracao = models.DateTimeField(auto_now=True, blank=True, null=True)
