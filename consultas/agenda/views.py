@@ -1,7 +1,10 @@
+from django.shortcuts import render
 from django.views.generic import ListView
+from consultas.agenda.forms import FormularioAgendamento
 from consultas.agenda.models import Agenda
 
-class Agendas(ListView):
-    template_name = "initial_page.html"
-    model = Agenda
-    context_object_name = "agendamentos"
+def Agendas (request):
+    agenda = Agenda.objects.all()
+    forms = FormularioAgendamento(request.POST or None)
+
+    return render(request, 'initial_page.html', {'agenda': agenda, 'forms': forms})

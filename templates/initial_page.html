@@ -41,6 +41,10 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/">
+          <span>Administração</span></a>
+
     </ul>
     <!-- End of Sidebar -->
 
@@ -68,7 +72,7 @@
 
      <table>
         <tbody>
-            {% for agendamento in agendamentos %}
+            {% for agenda in agenda %}
                 <tr>
                     <td>{{ agenda.paciente }}</td>
                     <td>{{ agenda.alunoa }}</td>
