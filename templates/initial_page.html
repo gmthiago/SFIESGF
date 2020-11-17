@@ -43,7 +43,7 @@
 
       <li class="nav-item">
         <a class="nav-link" href="/admin/">
-          <span>Administração</span></a>
+            <span><h5><b>Administração</b></h5></span></a>
 
     </ul>
     <!-- End of Sidebar -->
@@ -70,9 +70,15 @@
         {% endif %}
     {% endif %}
 
-     <table>
+     <table border="2">
         <tbody>
             {% for agenda in agenda %}
+                <tr>
+                    <th>Paciente</th>
+                    <th>Aluno A</th>
+                    <th>Aluno B</th>
+                    <th>Data Agendamento</th>
+                </tr>
                 <tr>
                     <td>{{ agenda.paciente }}</td>
                     <td>{{ agenda.alunoa }}</td>
