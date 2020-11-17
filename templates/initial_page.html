@@ -12,7 +12,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SFIESGF</title>
+  <title>SCAS</title>
 
   <!-- Custom fonts for this template-->
   <link href={% static "fontawesome-free/css/all.min.css" %} rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
-        <div class="sidebar-brand-text mx-3">SFIESGF</div>
+        <div class="sidebar-brand-text mx-3">SCAS</div>
       </a>
 
       <!-- Divider -->
@@ -52,41 +52,32 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-             <span>Sistema de Fisioterapia do IESGF</span></a>
+             <span>Sistema Clínico Acadêmico de Saúde</span></a>
         </nav>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-
-{% block content %}
-
-    {% if user.is_authenticated %}
-      <p>Bem vindo!</p>
-    {% else %}
-      <p>Por favor logue para ver esta página.</p>
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Seu usuário não tem acesso a esta página. Por favor acesse com um usuário que possua está permissão.</p>
+        {% else %}
+            <p>Por favor logue para ver esta página.</p>
+        {% endif %}
     {% endif %}
 
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
+     <table>
+        <tbody>
+            {% for agendado in agendados %}
+                <tr>
+                    <td>{{ agenda.paciente }}</td>
+                    <td>{{ agenda.alunoa }}</td>
+                    <td>{{ agenda.alunob }}</td>
+                    <td>{{ agenda.data_agendamento }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-  </form>
-
-  {# Assumes you setup the password_reset view in your URLconf #}
-  <p><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></p>
-
-{% endblock %}
 
 
         </div>

@@ -24,6 +24,7 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     url('agendamento/', include('agendamento.urls')),
+    url('agenda/', include('consultas.agenda.urls')),
     url('', TemplateView.as_view(template_name='index.html')),
     ]
 
