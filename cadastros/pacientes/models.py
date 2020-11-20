@@ -26,6 +26,7 @@ class Pacientes(models.Model):
     endereco_residencial = models.CharField(max_length=100, blank=False, null=True)
     email = models.EmailField(max_length=50, blank=True, null=False)
     nome_acompanhante = models.CharField(max_length=100, blank=True, null=False)
+    area = models.CharField(max_length=100, blank=False, null=True, verbose_name='Área de Intervenção')
     diag_clinico = models.CharField(max_length=1000, blank=False, null=True, verbose_name='Diagnóstico Clínico')
     ch_faixa_etaria = models.CharField('Faixa Etária', max_length=11, default='', blank=False, null=True, choices=(
         ('ADULTO', 'ADULTO'),

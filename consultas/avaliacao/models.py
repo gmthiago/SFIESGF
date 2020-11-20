@@ -12,6 +12,7 @@ class Avaliacao(models.Model):
     ciclo = models.CharField(max_length=1000, blank=False, null=True)
     professor = models.ForeignKey(Professor, on_delete=models.DO_NOTHING)
     supervisor = models.ForeignKey(Supervisor, on_delete=models.DO_NOTHING)
+    area = models.CharField(max_length=100, blank=False, null=True, verbose_name='Área de Intervenção')
     alunoa = models.CharField(max_length=100, blank=False, null=True, verbose_name="Aluno A")
     alunob = models.CharField(max_length=100, blank=True, null=False, verbose_name="Aluno B")
     alunoc = models.CharField(max_length=100, blank=True, null=False, verbose_name="Aluno C")
